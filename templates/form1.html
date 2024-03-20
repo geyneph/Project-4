@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>B safe cancer</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+body {font-family: "Times New Roman", Georgia, Serif;}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Playfair Display";
+  letter-spacing: 5px;
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+    <a href="#home" class="w3-bar-item w3-button">B SAFE CANCER</a>
+    <!-- Right-sided navbar links. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+      <a href="#about" class="w3-bar-item w3-button">About</a>
+      <a href="#viz1710700232662" class="w3-bar-item w3-button">Dashboard</a>
+      <a href="#form1" class="w3-bar-item w3-button">Model</a>
+    </div>
+  </div>
+</div>
+
+<!-- Page content -->
+<div class="w3-content" style="max-width:95%">
+
+  <!-- About Section -->
+  <div class="w3-row w3-padding-64" id="about">
+    <div class="w3-col m6 w3-padding-large w3-hide-small">
+     <img src="{{ url_for('static', filename='images/about.jpeg') }}"  alt="Table Setting" width="600" height="750">
+    </div>
+
+    <div class="w3-col m6 w3-padding-large">
+      <h1 class="w3-center">About B safe</h1><br>
+      <h5 class="w3-center">Cancer survival overall predictor Model</h5>
+      <p class="w3-large">We introduce the machine learning model named BSafe, designed to predict the probability of breast cancer survival while considering multiple clinical and molecular variables. B Safe addresses the need to improve breast cancer prognosis, one of the leading causes of mortality among women worldwide. This innovative approach integrates artificial intelligence techniques and data analysis to analyze factors such as patient age, tumor size, mutation count, cellularity level, and specific breast cancer type. By providing fast and personalized results, BSafe empowers medical professionals and patients with relevant information for informed clinical decision-making. Additionally, this model can make a valuable contribution to medical research by facilitating the analysis of large datasets and identifying predictive patterns. Ultimately, BSafe represents a significant advancement in improving breast cancer care and prognosis, with the potential to positively impact patient quality of life and long-term health outcomes. 
+    </div>
+  </div>
+  
+  <hr>
+  <div class='tableauPlaceholder' id='viz1710700232662' style='position: relative;'><noscript><a href='#'><img alt='Dashboard 1 ' 
+    src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Pr&#47;
+    Project4_BreastCancer&#47;Dashboard1&#47;1_rss.png' style='border: none' 
+    /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' 
+    value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
+    <param name='embed_code_version' value='3' /> 
+    <param name='site_root' value='' /><param name='name' value='Project4_BreastCancer&#47;Dashboard1' /><param name='tabs' 
+    value='no' /><param name='toolbar' value='yes' /><param name='static_image' 
+    value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Pr&#47;Project4_BreastCancer&#47;Dashboard1&#47;1.png' /> 
+    <param name='animate_transition' value='yes' /><param name='display_static_image' 
+    value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' 
+    value='yes' /><param name='display_count' value='yes' /><param name='language' 
+    value='en-US' /></object></div>  
+                 
+    <script type='text/javascript'>                    
+    
+    var divElement = document.getElementById('viz1710700232662');                   
+    var vizElement = divElement.getElementsByTagName('object')[0];                  
+    
+    if ( divElement.offsetWidth > 800 ) { vizElement.style.minWidth='100%';vizElement.style.maxWidth='100%';
+    vizElement.style.minHeight='700px';vizElement.style.maxHeight=(divElement.offsetWidth*0.75)+'px';} 
+    else if ( divElement.offsetWidth > 500 ) { vizElement.style.minWidth='420px';vizElement.style.maxWidth='100%';
+    vizElement.style.minHeight='587px';vizElement.style.maxHeight=(divElement.offsetWidth*0.75)+'px';}
+    else { vizElement.style.width='100%';vizElement.style.height='2227px';}                     
+    
+    var scriptElement = document.createElement('script');                    
+    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    
+        vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+  
+  <!-- Menu Section -->
+  
+
+  <hr>
+  <div class="formbold-form-wrapper" id="form1" style="font-size: 50;">
+    <h1 style="text-align: center;">OVERALL SURVIVAL MODEL PREDICTOR</h1>
+    <form name= 'passdata' action="." method="POST" style="font-size: 100;">
+      <div class="formbold-input-group">
+        <label for="name" class="formbold-form-label"> Name </label>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          placeholder="Enter your name"
+          class="formbold-form-input"
+        />
+      </div>
+
+      <div class="formbold-input-group">
+        <label for="age" class="formbold-form-label"> Age </label>
+        <input
+          type="text"
+          name="age"
+          id="age"
+          placeholder="Enter your age"
+          class="formbold-form-input"
+        />
+      </div>
+
+      <div class="formbold-input-group">
+        <label class="formbold-form-label">
+          The patient is under chemotherapy?
+        </label>
+
+        <select class="formbold-form-select" name="chemotherapy" id="occupation">
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </select>
+      </div>
+      <div class="formbold-input-group">
+        <label class="formbold-form-label">
+          The patient is under Hormone therapy?
+        </label>
+
+        <select class="formbold-form-select" name="Hormone" id="occupation">
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </select>
+      </div>
+      <div class="formbold-input-group">
+        <label for="age" class="formbold-form-label"> Number of mutations </label>
+        <input
+          type="text"
+          name="MutationsN"
+          id="age"
+          placeholder="Enter Number of mutations"
+          class="formbold-form-input"
+        />
+      </div>
+      <div class="formbold-input-group">
+        <label for="age" class="formbold-form-label"> Tumor size </label>
+        <input
+          type="text"
+          name="Tumorsize"
+          id="age"
+          placeholder="Enter Tumor size"
+          class="formbold-form-input"
+        />
+      </div>
+      <div class="formbold-input-group">
+        <label class="formbold-form-label">
+          Tipe of breast surgery
+        </label>
+
+        <select class="formbold-form-select" name="breastSurgery" id="occupation">
+          <option value="BREAST CONSERVING">Brest conserving</option>
+          <option value="MASTECTOMY">Mastectomy</option>
+        </select>
+      </div>
+      <div class="formbold-input-group">
+        <label class="formbold-form-label">
+          Cancer type detailed
+        </label>
+
+        <select class="formbold-form-select" name="cancerDetailed" id="occupation">
+          <option value="Breast Invasive Ductal Carcinoma">Breast Invasive Ductal Carcinoma</option>
+          <option value="Breast Mixed Ductal and Lobular Carcinoma">Breast Mixed Ductal and Lobular Carcinoma</option>
+          <option value="Breast Invasive Lobular Carcinoma">Breast Invasive Lobular Carcinoma</option>
+          <option value="Breast Invasive Mixed Mucinous Carcinoma">Breast Invasive Mixed Mucinous Carcinoma</option>
+          <option value="Breast">Breast</option>
+        </select>
+      </div>
+
+      <div class="formbold-input-radio-wrapper">
+        <label for="Cellularity" class="formbold-form-label">
+          Tumor Cellularity
+        </label>
+
+        <div class="formbold-radio-flex">
+          <div class="formbold-radio-group">
+            <label class="formbold-radio-label">
+              <input
+                class="formbold-input-radio"
+                type="radio"
+                name="Cellularity"
+                id="ans"
+                value="High"
+              />
+              High
+              <span class="formbold-radio-checkmark"></span>
+            </label>
+          </div>
+
+          <div class="formbold-radio-group">
+            <label class="formbold-radio-label">
+              <input
+                class="formbold-input-radio"
+                type="radio"
+                name="Cellularity"
+                id="ans"
+                value="Moderate"
+              />
+              Moderate
+              <span class="formbold-radio-checkmark"></span>
+            </label>
+          </div>
+
+          <div class="formbold-radio-group">
+            <label class="formbold-radio-label">
+              <input
+                class="formbold-input-radio"
+                type="radio"
+                name="Cellularity"
+                id="ans"
+                value="Low"
+              />
+              Low
+              <span class="formbold-radio-checkmark"></span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="formbold-input-radio-wrapper">
+        <label for="Stage" class="formbold-form-label">
+          Tumor Stage
+        </label>
+
+        <div class="formbold-radio-flex">
+          <div class="formbold-radio-group">
+            <label class="formbold-radio-label">
+              <input
+                class="formbold-input-radio"
+                type="radio"
+                name="Stage"
+                id="ans"
+                value="1"
+              />
+              1
+              <span class="formbold-radio-checkmark"></span>
+            </label>
+          </div>
+
+          <div class="formbold-radio-group">
+            <label class="formbold-radio-label">
+              <input
+                class="formbold-input-radio"
+                type="radio"
+                name="Stage"
+                id="ans"
+                value="2"
+              />
+              2
+              <span class="formbold-radio-checkmark"></span>
+            </label>
+          </div>
+
+          <div class="formbold-radio-group">
+            <label class="formbold-radio-label">
+              <input
+                class="formbold-input-radio"
+                type="radio"
+                name="Stage"
+                id="ans"
+                value="3"
+              />
+              3
+              <span class="formbold-radio-checkmark"></span>
+            </label>
+          </div>
+          <div class="formbold-radio-group">
+            <label class="formbold-radio-label">
+              <input
+                class="formbold-input-radio"
+                type="radio"
+                name="Stage"
+                id="ans"
+                value="4"
+              />
+              4
+              <span class="formbold-radio-checkmark"></span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <button class="formbold-btn">Model prediction</button>
+    </form>
+  </div>
+
+  
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-light-grey w3-padding-32">
+  <p>The information provided on this website is for informational purposes only. While we strive to keep the information accurate and up-to-date, we cannot guarantee its completeness or accuracy.</p>
+</footer>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      
+      background-color: white;
+    }
+    .formbold-main-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 48px;
+    }
+  
+    .formbold-form-wrapper {
+      margin: 0 auto;
+      max-width: 570px;
+      width: 100%;
+      background: white;
+      padding: 40px;
+    }
+  
+    .formbold-form-img {
+      margin-bottom: 45px;
+    }
+  
+    .formbold-input-group {
+      margin-bottom: 18px;
+    }
+  
+    .formbold-form-select {
+      width: 100%;
+      padding: 12px 22px;
+      border-radius: 5px;
+      border: 1px solid #dde3ec;
+      background: #ffffff;
+      font-size: 16px;
+      color: #536387;
+      outline: none;
+      resize: none;
+    }
+  
+    .formbold-input-radio-wrapper {
+      margin-bottom: 25px;
+    }
+    .formbold-radio-flex {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .formbold-radio-label {
+      font-size: 14px;
+      line-height: 24px;
+      color: #07074d;
+      position: relative;
+      padding-left: 25px;
+      cursor: pointer;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+    .formbold-input-radio {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+    }
+    .formbold-radio-checkmark {
+      position: absolute;
+      top: -1px;
+      left: 0;
+      height: 18px;
+      width: 18px;
+      background-color: #ffffff;
+      border: 1px solid #dde3ec;
+      border-radius: 50%;
+    }
+    .formbold-radio-label
+      .formbold-input-radio:checked
+      ~ .formbold-radio-checkmark {
+      background-color: #6a64f1;
+    }
+    .formbold-radio-checkmark:after {
+      content: '';
+      position: absolute;
+      display: none;
+    }
+  
+    .formbold-radio-label
+      .formbold-input-radio:checked
+      ~ .formbold-radio-checkmark:after {
+      display: block;
+    }
+  
+    .formbold-radio-label .formbold-radio-checkmark:after {
+      top: 50%;
+      left: 50%;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #ffffff;
+      transform: translate(-50%, -50%);
+    }
+  
+    .formbold-form-input {
+      width: 100%;
+      padding: 13px 22px;
+      border-radius: 5px;
+      border: 1px solid #dde3ec;
+      background: #ffffff;
+      font-weight: 500;
+      font-size: 16px;
+      color: #07074d;
+      outline: none;
+      resize: none;
+    }
+    .formbold-form-input::placeholder {
+      color: #536387;
+    }
+    .formbold-form-input:focus {
+      border-color: #6a64f1;
+      box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+    }
+    .formbold-form-label {
+      color: #07074d;
+      font-size: 14px;
+      line-height: 24px;
+      display: block;
+      margin-bottom: 10px;
+    }
+  
+    .formbold-btn {
+      text-align: center;
+      width: 100%;
+      font-size: 16px;
+      border-radius: 5px;
+      padding: 14px 25px;
+      border: none;
+      font-weight: 500;
+      background-color: #6a64f1;
+      color: white;
+      cursor: pointer;
+      margin-top: 25px;
+    }
+    .formbold-btn:hover {
+      box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+    }
+  </style>
+</body>
+</html>
